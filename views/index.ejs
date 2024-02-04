@@ -1,0 +1,26 @@
+<%- include("partials/header.ejs") %>
+
+<h1>Home</h1>
+<!-- passing the text by using ejs content by rendering the p -->
+<p><%= homeContent %></p>
+<!-- Create a foor loop to get eveysingle item in the object -->
+<!--  for(let i=0; i< posts.length; i++){%>
+         console.log(posts[i].title)%>
+     } -->
+     <!-- Create a foor loop to get each item inside the object -->
+     <%  posts.forEach((post)=>{ %>
+        <!-- console.log(post.title) -->
+        <h1><%= post.title %></h1>
+        <!-- Use a method to short or truncate the string to 100 characters -->
+        <p>
+            <%= post.content.substring(0,100) + "..."%>
+            <a href="/posts/<%=post.title%>">See More</a>
+            <!-- <button type="submit" class="deleteButton">❌</button> -->
+        </p>
+        
+     <% }) %>
+
+
+
+<%- include("partials/footer.ejs") %>
+

@@ -1,0 +1,13 @@
+<%- include("partials/header.ejs") %>
+
+<h1><%= title %></h1>
+<p><%= content %></p>
+
+<!-- Use the form action to delete a route by method Post -->
+<form action="/posts/<%= title %>" method="POST">
+    
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+
+
+<%- include("partials/footer.ejs") %>
